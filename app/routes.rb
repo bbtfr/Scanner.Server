@@ -15,7 +15,18 @@ module Scanner
     end
 
     before do
-      puts "  Params: #{params}"
+      if self.class.logging <= Logger::DEBUG
+        @request_start_at = Time.now
+
+        method = env[Rack::REQUEST_METHOD]
+        path = env[Rack::PATH_INFO]
+        query = env[Rack::QUERY_STRING]
+        path << "?#{query}" unless query.empty?
+        remote = env['HTTP_X_FORWARDED_FOR'] || env["REMOTE_ADDR"] || "-"
+
+        logger.debug "Started #{method} \"#{path}\" for #{remote} at #{@request_start_at}"
+        logger.debug "  Params: #{params}"
+      end
 
       @unique_id = params[:uniqueId]
       error_json 400, '请求参数错误' unless @unique_id
@@ -23,17 +34,23 @@ module Scanner
       @ability = Ability.find(unique_id: @unique_id) || Ability.create(unique_id: @unique_id, use_counts: {})
     end
 
+    after do
+      duration = ((Time.now - @request_start_at) * 1000).to_i
+      logger.debug "Completed #{status} #{Rack::Utils::HTTP_STATUS_CODES[status]} in #{duration}ms" if @request_start_at
+    end
+
     helpers do
       def check_ability feature
         if @ability.has_ability? feature
           @ability.increase_use_count! feature
         else
-          puts "  UID #{@unique_id} reach limit: #{feature}"
+          logger.debug "  UID #{@unique_id} reach limit: #{feature}"
           error_json 200, '接口使用超过限制次数'
         end
       end
     end
 
+    set :logging, development? ? ::Logger::DEBUG : ::Logger::INFO
     set :environment, RACK_ENV
     set :show_exceptions, false
 
@@ -61,6 +78,7 @@ module Scanner
     end
 
     post '/abilities' do
+      logger.debug "  UID #{@unique_id} abilities: #{@ability.abilities}."
       render_json abilities: @ability.abilities
     end
 
@@ -68,6 +86,7 @@ module Scanner
       @feature = params['feature']
       error_json 400, '请求参数错误' unless @feature
 
+      logger.debug "  UID #{unique_id} increase use count: #{feature} => #{use_counts[feature]}."
       @ability.increase_use_count! @feature
       render_json
     end

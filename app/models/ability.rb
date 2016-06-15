@@ -12,7 +12,6 @@ class Ability < Sequel::Model
 
   def increase_use_count! feature
     use_counts[feature] = use_count(feature) + 1
-    puts "  UID #{unique_id} increase use count: #{feature} => #{use_counts[feature]}."
     save
   end
 
@@ -25,7 +24,6 @@ class Ability < Sequel::Model
     ABILITIES.each do |feature, limit|
       abilities[feature] = has_ability? feature, limit
     end
-    puts "  UID #{unique_id} abilities: #{abilities}."
     abilities
   end
 
