@@ -14,4 +14,9 @@ Dir['app/models/*.rb'].each do |file|
 end
 
 require_relative '../lib/sensetime_api'
+
+# Load routes
 require_relative '../app/routes'
+Dir['app/routes/*.rb'].each do |file|
+  load file
+end
