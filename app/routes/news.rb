@@ -6,8 +6,8 @@ module Scanner
 
       get '/page/:page' do
         page = (params[:page] || 1).to_i
-        from = page * 10 - 9
-        to = from + 10
+        to = page * 10
+        from = to - 9
 
         base_url = "#{request.scheme}://#{request.host_with_port}"
         data = (from..to).map do |i|
