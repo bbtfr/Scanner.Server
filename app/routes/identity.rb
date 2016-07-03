@@ -44,7 +44,7 @@ module Scanner
         @feature = params['feature']
         error_json 400, '请求参数错误' unless @feature
 
-        logger.debug "  UID #{unique_id} increase use count: #{feature} => #{use_counts[feature]}."
+        logger.debug "  UID #{@unique_id} increase use count: #{@feature} => #{@ability.use_count(@feature)}."
         @ability.increase_use_count! @feature
         render_json
       end
