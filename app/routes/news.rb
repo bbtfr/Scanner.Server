@@ -8,6 +8,7 @@ module Scanner
         page = (params[:page] || 1).to_i
         to = page * 10
         from = to - 9
+        finished = page > 5
 
         base_url = "#{request.scheme}://#{request.host_with_port}"
         data = (from..to).map do |i|
@@ -17,7 +18,7 @@ module Scanner
             thumbnail: "#{base_url}/news/sample.jpg" }
         end
 
-        render_json data: data, page: page
+        render_json data: data, page: page, finished: finished
       end
 
     end
