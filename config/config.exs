@@ -22,12 +22,7 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-config :scanner, DeployManager,
-  server: "zhongheng",
-  username: "ubuntu",
-  deploy_to: "/var/www/scanner",
-  link_files: ["config/prod.secret.exs", ".env"]
-
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
+import_config "config.secret.exs"

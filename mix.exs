@@ -19,7 +19,7 @@ defmodule Scanner.Mixfile do
   def application do
     [mod: {Scanner, []},
      applications: [:dotenv, :phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger,
-                    :gettext, :phoenix_ecto, :postgrex, :httpoison]]
+                    :gettext, :phoenix_ecto, :postgrex, :httpoison, :dex]]
   end
 
   # Specifies which paths to compile per environment.
@@ -40,7 +40,8 @@ defmodule Scanner.Mixfile do
      {:cowboy, "~> 1.0"},
      {:httpoison, "~> 0.9"},
      {:dotenv, "~> 2.0.0"},
-     {:exrm, "~> 1.0"}]
+     {:exrm, "~> 1.0"},
+     {:dex, path: "../../ELIXIR/dex"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
