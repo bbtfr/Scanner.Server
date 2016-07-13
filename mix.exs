@@ -18,8 +18,8 @@ defmodule Scanner.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Scanner, []},
-     applications: [:dotenv, :phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger,
-                    :gettext, :phoenix_ecto, :postgrex, :httpoison, :dex]]
+     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
+                    :phoenix_ecto, :postgrex, :httpoison, :dex]]
   end
 
   # Specifies which paths to compile per environment.
@@ -39,9 +39,8 @@ defmodule Scanner.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:httpoison, "~> 0.9"},
-     {:dotenv, "~> 2.0.0"},
      {:exrm, "~> 1.0"},
-     {:dex, path: "../../ELIXIR/dex"}]
+     {:dex, "~> 0.0"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

@@ -1,15 +1,13 @@
 defmodule Scanner.SensetimeAPI do
   require Logger
 
-  @api_id     System.get_env("API_ID")
-  @api_secret System.get_env("API_SECRET")
-
   def selfie_idnumber_verification file, id, name do
+    [api_id: api_id, api_secret: api_secret] = Application.get_env(:scanner, :sensetime)
     url = "https://v1-auth-api.visioncloudapi.com/identity/selfie_idnumber_verification"
     body = {:multipart, [
-      {:file, file.path, {"form-data", [{"name", "selfie_file"}, {"filename", file.filename}]}, [{"Content-Type", file.content_type}]},
-      {"api_id", @api_id},
-      {"api_secret", @api_secret},
+      {:file, file.path, {["form-data"], [{"name", "selfie_file"}, {"filename", file.filename}]}, [{"Content-Type", file.content_type}]},
+      {"api_id", api_id},
+      {"api_secret", api_secret},
       {"id_number", id},
       {"name", name},
     ]}

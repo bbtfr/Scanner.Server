@@ -23,5 +23,6 @@ defmodule Scanner.Router do
     get "/identity/abilities", IdentityController, :abilities
     post "/identity/identify", IdentityController, :identify
 
+    get "/news", NewsController, :index
   end
 end
