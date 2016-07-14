@@ -27,17 +27,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Mocha is a mocking and stubbing library for Ruby
-gem 'mocha', group: :test
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
-end
-
 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
 gem 'kaminari'
 # Paperclip is intended as an easy file attachment library for ActiveRecord.
@@ -47,6 +36,11 @@ gem 'dotenv-rails'
 # Simple HTTP and REST client for Ruby, inspired by microframework syntax for specifying actions.
 gem 'rest-client'
 
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platform: :mri
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
@@ -54,6 +48,17 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Use Capistrano for deployment
+  # gem 'capistrano-rails'
+end
+
+
+group :test do
+  # Mocha is a mocking and stubbing library for Ruby
+  gem 'mocha'
+  # Code coverage for Ruby 1.9+ with a powerful configuration library and automatic merging of coverage across test suites
+  gem 'simplecov'
 end
 
 group :production do

@@ -9,4 +9,9 @@ class Api::NewsControllerTest < ActionDispatch::IntegrationTest
     get api_news_index_url
     assert_response :success
   end
+
+  test "should get index with specific category" do
+    get api_news_index_url(category: "services")
+    assert_response :success
+  end
 end
