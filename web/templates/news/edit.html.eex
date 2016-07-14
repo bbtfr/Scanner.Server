@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h2>编辑社保新闻 <small>#<%= @news.id %></small></h2>
+</div>
+
+<% text_field = fn key, label -> %>
+  <div class="form-group">
+    <label for="news_<%= key %>"><%= label %></label>
+    <input type="text" name="news[<%= key %>]" class="form-control" id="news_<%= key %>" placeholder="请输入新闻<%= label %>" value="<%= @news |> Map.get(key) %>">
+  </div>
+<% end %>
+
+<% text_area = fn key, label -> %>
+  <div class="form-group">
+    <label for="news_<%= key %>"><%= label %></label>
+    <textarea type="text" name="news[<%= key %>]" class="form-control" id="news_<%= key %>" placeholder="请输入新闻<%= label %>" rows="4"><%= @news |> Map.get(key) %></textarea>
+  </div>
+<% end %>
+
+<div class="row">
+  <form class="col-md-7" action="<%= news_path(@conn, :update, @news.id) %>" method="post">
+    <%= text_field.(:title, "标题") %>
+    <%= text_field.(:subtitle, "副标题") %>
+    <%= text_field.(:author, "作者") %>
+    <%= text_field.(:thumbnail_url, "缩略图链接") %>
+    <%= text_field.(:source_url, "原文链接") %>
+    <%= text_area.(:content, "文章内容") %>
+
+    <button type="submit" class="btn btn-primary pull-right">Submit</button>
+  </form>
+</div>

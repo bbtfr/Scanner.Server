@@ -4,18 +4,11 @@ defmodule Scanner.API.NewsController do
 
   alias Scanner.News
 
-  def index conn, params do
-    page = if params["page"], do: String.to_integer(params["page"]), else: 1
-    offset = (page - 1) * 10
-    finished = Repo.one(from n in News, select: count("id")) <= offset + 10
-    query =
-      if params["type"] do
-        from n in News, where: n.type == ^params["type"]
-      else
-        News
-      end
+  defdelegate fetch_all_news(conn, _options), to: Scanner.NewsController
+  plug :fetch_all_news when action == :index
 
-    news = Repo.all(from n in query, limit: 10, offset: ^offset)
+  def index conn, params do
+    %{news: news, page: page, finished: finished} = conn.assigns
     json_success conn, %{data: news, page: page, finished: finished}
   end
 end

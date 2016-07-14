@@ -15,6 +15,8 @@ defmodule Scanner.Router do
 
   scope "/", Scanner do
     pipe_through :browser
+
+    resources "/news", NewsController
   end
 
   scope "/api", Scanner.API do

@@ -1,1 +1,18 @@
 /* This file is for your main application css. */
+body {
+  padding-top: 70px;
+}
+
+p.pagination {
+  line-height: 34px;
+}
+
+.data-table .pagination {
+  margin-top: 0;
+}
+
+.highlight {
+  background: yellow;
+  margin: -2px;
+  padding: 2px;
+}
