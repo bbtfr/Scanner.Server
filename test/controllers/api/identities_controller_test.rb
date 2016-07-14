@@ -1,48 +1,45 @@
 require 'test_helper'
 
 class Api::IdentitiesControllerTest < ActionDispatch::IntegrationTest
-  setup do
-    @api_identity = api_identities(:one)
-  end
-
-  test "should get index" do
-    get api_identities_url
+  test "should not get abilities without unique_id" do
+    get abilities_api_identity_url
     assert_response :success
+    assert_equal "failed", json_response["status"]
   end
 
-  test "should get new" do
-    get new_api_identity_url
+  test "should get abilities with unique_id" do
+    get abilities_api_identity_url(unique_id: 1)
     assert_response :success
+    assert_equal "success", json_response["status"]
   end
 
-  test "should create api_identity" do
-    assert_difference('Api::Identity.count') do
-      post api_identities_url, params: { api_identity: {  } }
-    end
-
-    assert_redirected_to api_identity_url(Api::Identity.last)
-  end
-
-  test "should show api_identity" do
-    get api_identity_url(@api_identity)
+  test "should update use count" do
+    post use_count_api_identity_url(unique_id: 1, feature: "scan_id_card")
     assert_response :success
-  end
+    assert_equal "failed", json_response["status"]
 
-  test "should get edit" do
-    get edit_api_identity_url(@api_identity)
+    Ability.create(unique_id: 1, use_counts: { "scan_id_card" => 1 })
+    post use_count_api_identity_url(unique_id: 1, feature: "scan_id_card")
     assert_response :success
+    assert_equal "success", json_response["status"]
   end
 
-  test "should update api_identity" do
-    patch api_identity_url(@api_identity), params: { api_identity: {  } }
-    assert_redirected_to api_identity_url(@api_identity)
-  end
+  test "should get identify infomation" do
+    Ability.create(unique_id: 1, use_counts: { "liveness_test" => 10 })
 
-  test "should destroy api_identity" do
-    assert_difference('Api::Identity.count', -1) do
-      delete api_identity_url(@api_identity)
-    end
+    SensetimeAPI.stubs(:selfie_idnumber_verification).raises(RuntimeError)
+    post identify_api_identity_url(unique_id: 1, image: "MOCK", name: "MOCK", id: "MOCK")
+    assert_response :success
+    assert_equal "failed", json_response["status"]
 
-    assert_redirected_to api_identities_url
+    SensetimeAPI.stubs(:selfie_idnumber_verification).returns(read_fixture_json('identify_failed'))
+    post identify_api_identity_url(unique_id: 1, image: "MOCK", name: "MOCK", id: "MOCK")
+    assert_response :success
+    assert_equal "failed", json_response["status"]
+
+    SensetimeAPI.stubs(:selfie_idnumber_verification).returns(read_fixture_json('identify_success'))
+    post identify_api_identity_url(unique_id: 1, image: "MOCK", name: "MOCK", id: "MOCK")
+    assert_response :success
+    assert_equal "success", json_response["status"]
   end
 end

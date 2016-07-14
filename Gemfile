@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Mocha is a mocking and stubbing library for Ruby
+gem 'mocha', group: :test
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -37,13 +40,10 @@ end
 
 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
 gem 'kaminari'
-
 # Paperclip is intended as an easy file attachment library for ActiveRecord.
 gem 'paperclip'
-
 # Shim to load environment variables from .env into ENV in development.
 gem 'dotenv-rails'
-
 # Simple HTTP and REST client for Ruby, inspired by microframework syntax for specifying actions.
 gem 'rest-client'
 

@@ -1,6 +1,4 @@
 class Api::NewsController < Api::ApplicationController
-  skip_before_action :verify_authenticity_token
-
   def index
     @page = (params[:page] || 1).to_i
     @per = (params[:per] || 10).to_i
