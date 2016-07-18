@@ -20,6 +20,13 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+# Use postgresql in production
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  hostname: localhost
+  database: scanner_production
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  pool: 5
+
