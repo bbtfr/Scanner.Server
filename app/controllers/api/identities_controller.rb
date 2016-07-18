@@ -24,7 +24,7 @@ class Api::IdentitiesController < Api::ApplicationController
       return
     end
 
-    json_success validity: true
+    json_success validity: true, message: "检测成功"
   rescue => error
     logger.error error.message
     json_failed :internal_server_error, "服务器内部错误"
