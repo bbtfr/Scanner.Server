@@ -8,6 +8,7 @@ class NewsController < ApplicationController
 
   # GET /news/1
   def show
+    render :show, layout: false
   end
 
   # GET /news/new

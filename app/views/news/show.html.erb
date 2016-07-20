@@ -1,4 +1,35 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @news.title %></title>
+    <style type="text/css">
+      .wechat-content h2 {
+        margin-bottom: 5px;
+      }
+      .wechat-content .message-meta-data {
+        color: grey;
+      }
+      .wechat-content .message-content {
+        margin-top: 10px;
+      }
+      img {
+        display: block;
+        width: 100%;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="wechat-content">
+      <h2><%= @news.title %></h2>
+      <div class="message-meta-data">
+        <span><%= l @news.created_at, format: :long %></span>
+        <span><%= @news.author %></span>
+      </div>
 
-<%= link_to 'Edit', edit_news_path(@news) %> |
-<%= link_to 'Back', news_index_path %>
+      <div class="message-content">
+        <%= raw @news.source_content %>
+      </div>
+    </div>
+  </body>
+</html>
