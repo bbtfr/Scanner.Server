@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20160714133358) do
 
   create_table "news", force: :cascade do |t|
     t.string   "title"
-    t.string   "subtitle"
     t.string   "author"
     t.string   "category"
     t.string   "thumbnail_url"

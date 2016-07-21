@@ -20,7 +20,6 @@ ActiveRecord::Base.transaction do
     %w(policies notifications services).each do |category|
       News.create(
         title: "测试新闻 #{i}",
-        subtitle: "测试新闻副标题 #{i}",
         author: "李阳",
         category: category,
         thumbnail_url: "http://placehold.it/200x150",
