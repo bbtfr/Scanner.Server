@@ -1,17 +1,18 @@
-<%= form_for(news) do |f| %>
-  <% if news.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(news.errors.count, "error") %> prohibited this news from being saved:</h2>
+<%= simple_form_for(news, html: { class: 'form-horizontal col-md-7' }) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% news.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :author %>
+    <%= f.input :category, collection: News::CATEGORIES %>
+    <%= f.input :source_content, input_html: { rows: 4 } %>
+    <%= f.input :source_url %>
+    <%= f.input :thumbnail_image %>
+    <%= f.input :thumbnail_url %>
   </div>
+
+  <div class="form-actions pull-right">
+    <%= f.button :submit %>
+  </div>
+
 <% end %>

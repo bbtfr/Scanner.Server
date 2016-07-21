@@ -1,0 +1,16 @@
+zh-CN:
+  activerecord:
+    models:
+      news: 新闻
+    attributes:
+      news:
+        id: ID
+        title: 标题
+        author: 作者
+        category: 分类
+        source_url: 源网页链接
+        source_content: 新闻正文
+        thumbnail_url: 缩略图链接
+        thumbnail_image: 缩略图
+        created_at: 创建时间
+        updated_at: 更新时间

@@ -1,0 +1,14 @@
+zh-CN:
+  index_for:
+    blank: 无
+    # If you want to use html tags with blank value use blank html translation
+    # blank_html: "<span>Not specified</span>"
+    "yes": 是
+    "no": 否
+    actions:
+      actions: 操作
+      show: 显示
+      new: 新建
+      edit: 编辑
+      destroy: 删除
+      confirmation: 你确定要删除这条记录？

@@ -1,9 +1,8 @@
-source 'https://gems.ruby-china.org'
-
+# source 'https://gems.ruby-china.org'
+source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
-gem 'rails-i18n'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -22,6 +21,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
+gem 'bootstrap-sass'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -29,8 +30,12 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'index_for', path: '../../RUBY/index_for'
+gem 'simple_form'
+
 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
 gem 'kaminari'
+
 # Paperclip is intended as an easy file attachment library for ActiveRecord.
 gem 'paperclip'
 # Shim to load environment variables from .env into ENV in development.

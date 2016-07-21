@@ -1,4 +1,10 @@
 class News < ApplicationRecord
+  CATEGORIES = {
+    '社保政策' => 'policies',
+    '社保通知' => 'notifications',
+    '社保服务' => 'services'
+  }
+
   has_attached_file :thumbnail_image, styles: { thumb: "100x80>" }
   validates_attachment_content_type :thumbnail_image, content_type: /\Aimage\/.*\Z/
 

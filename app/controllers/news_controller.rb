@@ -24,37 +24,26 @@ class NewsController < ApplicationController
   def create
     @news = News.new(news_params)
 
-    respond_to do |format|
-      if @news.save
-        format.html { redirect_to @news, notice: 'News was successfully created.' }
-        format.json { render :show, status: :created, location: @news }
-      else
-        format.html { render :new }
-        format.json { render json: @news.errors, status: :unprocessable_entity }
-      end
+    if @news.save
+      redirect_to news_index_url, notice: "成功创建 社保新闻 ##{@news.id}"
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /news/1
   def update
-    respond_to do |format|
-      if @news.update(news_params)
-        format.html { redirect_to @news, notice: 'News was successfully updated.' }
-        format.json { render :show, status: :ok, location: @news }
-      else
-        format.html { render :edit }
-        format.json { render json: @news.errors, status: :unprocessable_entity }
-      end
+    if @news.update(news_params)
+      redirect_to news_index_url, notice: "成功更新 社保新闻 ##{@news.id}"
+    else
+      render :edit
     end
   end
 
   # DELETE /news/1
   def destroy
     @news.destroy
-    respond_to do |format|
-      format.html { redirect_to news_index_url, notice: 'News was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to news_index_url, notice: "成功删除 社保新闻 ##{@news.id}"
   end
 
   private
@@ -65,6 +54,7 @@ class NewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def news_params
-      params.fetch(:news, {})
+      params.require(:news).permit(:title, :author, :source_content, :source_url,
+        :thumbnail_url, :thumbnail_image)
     end
 end

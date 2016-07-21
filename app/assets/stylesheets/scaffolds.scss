@@ -1,89 +1,68 @@
 body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-  margin: 33px;
+  padding-top: 70px;
 }
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-  margin: 33px;
-}
+.wice_index_for {
+  .index_for {
+    clear: both;
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    max-width: none !important;
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
+    thead > tr > th {
+      padding-right: 30px;
+      white-space: nowrap;
+    }
 
-a {
-  color: #000;
+    thead .sorting,
+    thead .sorting.asc,
+    thead .sorting.desc,
+    thead .sorting.asc.disabled,
+    thead .sorting.desc.disabled {
+      cursor: pointer;
+      position: relative;
+    }
 
-  &:visited {
-    color: #666;
+    thead .sorting:after,
+    thead .sorting.asc:after,
+    thead .sorting.desc:after {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      display: block;
+      font-family: 'Glyphicons Halflings';
+      opacity: 0.5;
+    }
+    thead .sorting.asc.disabled:after,
+    thead .sorting.desc.disabled:after {
+      color: #eee;
+    }
+    thead .sorting:after {
+      opacity: 0.2;
+      content: "\e150"; /* sort */
+    }
+    thead .sorting.asc:after {
+      content: "\e155"; /* sort-by-attributes */
+    }
+    thead .sorting.desc:after {
+      content: "\e156"; /* sort-by-attributes-alt */
+    }
   }
 
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
-}
-
-th {
-  padding-bottom: 5px;
-}
-
-td {
-  padding-bottom: 7px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
-}
-
-#notice {
-  color: green;
-}
-
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px;
-    margin-bottom: 0;
-    background-color: #c00;
-    color: #fff;
+  .index_for_info {
+    display: inline-block;
+    line-height: 34px;
   }
 
-  ul li {
-    font-size: 12px;
-    list-style: square;
+  .index_for_pagination ul {
+    margin: 0;
   }
 }
 
-label {
-  display: block;
+.table {
+  .actions {
+    .action {
+      margin-right: 5px;
+    }
+  }
 }
