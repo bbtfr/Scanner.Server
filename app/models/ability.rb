@@ -1,5 +1,6 @@
 class Ability < ApplicationRecord
   FEATURES = %w(scan_id_card liveness_test)
+  CHECK_ABILITY = false
 
   serialize :use_counts, Hash
 
@@ -15,10 +16,12 @@ class Ability < ApplicationRecord
   end
 
   def has_ability? feature
+    return true unless CHECK_ABILITY
     use_count(feature) > 0
   end
 
   def decrease_use_count! feature
+    return true unless CHECK_ABILITY
     use_counts[feature] = use_count(feature) - 1
     save!
   end
