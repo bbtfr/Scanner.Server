@@ -17,6 +17,7 @@ end %>
       <% News::CATEGORIES.each do |title, key| %>
         <%= nav_item title, key %>
       <% end %>
+      <li class="divider"></li>
       <li><%= link_to("新建新闻", new_news_path) %></li>
     </ul>
   </div>

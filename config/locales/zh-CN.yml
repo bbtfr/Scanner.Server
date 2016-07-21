@@ -2,6 +2,7 @@ zh-CN:
   activerecord:
     models:
       news: 新闻
+      identify_calling: 接口调用记录
     attributes:
       news:
         id: ID
@@ -14,3 +15,11 @@ zh-CN:
         thumbnail_image: 缩略图
         created_at: 创建时间
         updated_at: 更新时间
+      identify_calling:
+        id: ID
+        request_id: 请求ID
+        remote_ip: 请求IP
+        device_id: 请求设备ID
+        id_number: 身份证号码
+        name: 姓名
+        endpoint: 请求接口

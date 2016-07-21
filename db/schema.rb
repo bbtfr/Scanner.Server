@@ -10,13 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714133358) do
+ActiveRecord::Schema.define(version: 20160721170125) do
 
   create_table "abilities", force: :cascade do |t|
     t.string   "unique_id"
     t.text     "use_counts"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "callings", force: :cascade do |t|
+    t.string   "request_id"
+    t.string   "remote_ip"
+    t.string   "device_id"
+    t.string   "id_number"
+    t.string   "name"
+    t.integer  "image_id"
+    t.text     "sensetime_result"
+    t.datetime "created_at"
+    t.index ["image_id"], name: "index_callings_on_image_id"
+  end
+
+  create_table "identify_callings", force: :cascade do |t|
+    t.string   "request_id"
+    t.string   "remote_ip"
+    t.string   "device_id"
+    t.string   "id_number"
+    t.string   "name"
+    t.integer  "image_id"
+    t.text     "sensetime_result"
+    t.datetime "created_at"
+    t.string   "endpoint"
+    t.index ["image_id"], name: "index_identify_callings_on_image_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.string   "sensetime_image_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "news", force: :cascade do |t|
@@ -32,6 +67,15 @@ ActiveRecord::Schema.define(version: 20160714133358) do
     t.text     "source_content"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.string   "id_number"
+    t.string   "name"
+    t.integer  "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["image_id"], name: "index_people_on_image_id"
   end
 
 end

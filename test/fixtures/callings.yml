@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  request_id: MyString
+  remote_ip: MyString
+  device_id: MyString
+  id_number: MyString
+  name: MyString
+  image: one
+
+two:
+  request_id: MyString
+  remote_ip: MyString
+  device_id: MyString
+  id_number: MyString
+  name: MyString
+  image: two

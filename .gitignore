@@ -25,3 +25,6 @@
 
 # Coverage results
 /coverage
+
+# Paperclip uploaded files
+/public/system

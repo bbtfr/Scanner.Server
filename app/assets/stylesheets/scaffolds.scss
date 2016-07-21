@@ -9,6 +9,10 @@ body {
     margin-bottom: 6px !important;
     max-width: none !important;
 
+    .blank {
+      color: #777;
+    }
+
     thead > tr > th {
       padding-right: 30px;
       white-space: nowrap;
@@ -64,5 +68,14 @@ body {
     .action {
       margin-right: 5px;
     }
+  }
+}
+
+.nav {
+  .divider {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
   }
 }

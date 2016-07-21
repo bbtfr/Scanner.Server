@@ -6,7 +6,7 @@ IndexFor.setup do |config|
   # # The tag which wraps index_for calls.
   # config.table_tag = :table
   # config.table_class = nil
-  
+
   # config.table_head_tag = :thead
   # config.table_head_class = nil
 
@@ -18,7 +18,7 @@ IndexFor.setup do |config|
 
   # config.table_head_cell_tag = :th
   # config.table_head_cell_class = nil
-  
+
   # config.table_body_cell_tag = :td
   # config.table_body_cell_class = nil
 
@@ -55,5 +55,9 @@ IndexFor.setup do |config|
   # # The tag which wraps the collections.
   # config.collection_tag = :ul
   # config.collection_column_tag = :li
+
+  config.format :watermark do |str|
+    str[0..3] + '****' + str[-4..-1]
+  end
 
 end
