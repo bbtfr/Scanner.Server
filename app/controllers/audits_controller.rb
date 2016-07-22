@@ -6,4 +6,8 @@ class AuditsController < ApplicationController
   def identify
     @callings = IdentifyCalling.all
   end
+
+  def people
+    @people = Person.all
+  end
 end

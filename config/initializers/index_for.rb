@@ -57,7 +57,7 @@ IndexFor.setup do |config|
   # config.collection_column_tag = :li
 
   config.format :watermark do |str|
-    str[0..3] + '****' + str[-4..-1]
+    str.gsub(/^(.{4}).*(.{4})$/, '\1****\2')
   end
 
 end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :news
   resource :audit, only: :show do
     get :identify
+    get :people
   end
 
   namespace :api, defaults: { format: 'json' } do

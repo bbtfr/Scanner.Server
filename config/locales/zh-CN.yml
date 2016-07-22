@@ -3,6 +3,7 @@ zh-CN:
     models:
       news: 新闻
       identify_calling: 接口调用记录
+      person: 人员记录
     attributes:
       news:
         id: ID
@@ -24,3 +25,11 @@ zh-CN:
         name: 姓名
         endpoint: 请求接口
         validity: 检验结果
+      person:
+        id_number: 身份证号码
+        name: 姓名
+        created_at: 首次认证时间
+        updated_at: 最近认证时间
+        identify_callings_count: 认证次数
+        accepted_identify_callings_count: 认证通过次数
+
