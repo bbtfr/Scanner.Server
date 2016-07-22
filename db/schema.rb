@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160721170125) do
+ActiveRecord::Schema.define(version: 20160722050611) do
 
   create_table "abilities", force: :cascade do |t|
     t.string   "unique_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20160721170125) do
     t.text     "sensetime_result"
     t.datetime "created_at"
     t.string   "endpoint"
+    t.string   "validity"
     t.index ["image_id"], name: "index_identify_callings_on_image_id"
   end
 

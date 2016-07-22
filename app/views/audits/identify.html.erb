@@ -10,14 +10,17 @@
   </div>
 
   <div class="col-md-9 data-table">
+    <% blank = '<span class="blank">未知</span>'.html_safe %>
     <%= wice_index_for @callings, class: "table table-striped table-hover" do |i| %>
-      <%= i.attribute :request_id %>
       <%= i.attribute :remote_ip %>
       <%= i.attribute :device_id %>
       <%= i.attribute :name %>
       <%= i.attribute :id_number, format: :watermark %>
       <%= i.attribute :endpoint do |calling| %>
-        <%= IdentifyCalling::ENDPOINTS.key(calling.endpoint) %>
+        <%= IdentifyCalling::ENDPOINTS.key(calling.endpoint) || blank %>
+      <% end %>
+      <%= i.attribute :validity do |calling| %>
+        <%= IdentifyCalling::VALIDITIES.key(calling.validity) || blank %>
       <% end %>
     <% end %>
   </div>

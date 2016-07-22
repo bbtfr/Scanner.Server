@@ -23,3 +23,4 @@ zh-CN:
         id_number: 身份证号码
         name: 姓名
         endpoint: 请求接口
+        validity: 检验结果

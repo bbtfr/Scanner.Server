@@ -33,7 +33,7 @@ class Api::IdentitiesController < Api::ApplicationController
       sensetime_image_id: result["selfie"]["image_id"]
     )
 
-    IdentifyCalling.create!(
+    calling = IdentifyCalling.new(
       request_id: request.request_id,
       remote_ip: request.remote_ip,
       device_id: params["unique_id"],
@@ -46,11 +46,17 @@ class Api::IdentitiesController < Api::ApplicationController
 
     # 打印比对结果
     unless person || result["identity"]["validity"]
+      calling.validity = result["identity"]["reason"].parameterize(separator: '_')
+      calling.save!
+
       json_failed :ok, "身份证信息验证失败"
       return
     end
 
     if result["confidence"] < CONFIDENCE_THRESHOLD
+      calling.validity = "ineligible_confidence"
+      calling.save!
+
       json_failed :ok, "脸谱信息验证失败"
       return
     end
@@ -62,6 +68,9 @@ class Api::IdentitiesController < Api::ApplicationController
     )
     person.image = image
     person.save!
+
+    calling.validity = "accepted"
+    calling.save!
 
     # 打印比对结果
     json_success validity: true, message: "检测成功"
