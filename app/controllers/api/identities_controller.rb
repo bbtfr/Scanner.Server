@@ -50,7 +50,7 @@ class Api::IdentitiesController < Api::ApplicationController
       calling.validity = result["identity"]["reason"].parameterize(separator: '_')
       calling.save!
 
-      json_failed :ok, "身份证信息验证失败"
+      json_failed :ok, "身份证信息验证失败\n姓名和身份证号不匹配\n请检查您输入的身份信息是否有误\n如有问题，请联系：123456789"
       return
     end
 
@@ -58,7 +58,7 @@ class Api::IdentitiesController < Api::ApplicationController
       calling.validity = "ineligible_confidence"
       calling.save!
 
-      json_failed :ok, "脸谱信息验证失败"
+      json_failed :ok, "脸谱信息验证失败\n请在光线明亮的环境下重新尝试认证\n如有问题，请联系：123456789"
       return
     end
 
@@ -74,10 +74,10 @@ class Api::IdentitiesController < Api::ApplicationController
     calling.save!
 
     # 打印比对结果
-    json_success validity: true, message: "检测成功"
+    json_success validity: true, message: "检测成功！\n感谢使用，认证结果已发送社保局"
   rescue => error
     logger.error error.message
-    json_failed :internal_server_error, "服务器内部错误"
+    json_failed :internal_server_error, "服务器正在维护中，请稍后再试\n如有问题，请联系：123456789"
   end
 
   def abilities
