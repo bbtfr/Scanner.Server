@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: 'json' } do
     resources :news, only: :index
+    resources :cities, only: :index
     resource :identity, only: [] do
       post :identify
       get :abilities

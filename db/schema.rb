@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160722050611) do
+ActiveRecord::Schema.define(version: 20160724051410) do
 
   create_table "abilities", force: :cascade do |t|
     t.string   "unique_id"
@@ -29,6 +29,12 @@ ActiveRecord::Schema.define(version: 20160722050611) do
     t.text     "sensetime_result"
     t.datetime "created_at"
     t.index ["image_id"], name: "index_callings_on_image_id"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "identify_callings", force: :cascade do |t|
