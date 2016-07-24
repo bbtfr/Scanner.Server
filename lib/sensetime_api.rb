@@ -28,5 +28,8 @@ module SensetimeAPI
     result = RestClient.post(url, params)
     Rails.logger.debug "  Response: #{result}"
     JSON.parse result
+  rescue => error
+    Rails.logger.error error.response.body
+    raise error
   end
 end

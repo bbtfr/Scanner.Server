@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160724051410) do
+ActiveRecord::Schema.define(version: 20160724072612) do
 
   create_table "abilities", force: :cascade do |t|
     t.string   "unique_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160724051410) do
     t.datetime "created_at"
     t.string   "endpoint"
     t.string   "validity"
+    t.integer  "city_id"
     t.index ["image_id"], name: "index_identify_callings_on_image_id"
   end
 

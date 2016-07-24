@@ -37,6 +37,7 @@ class Api::IdentitiesController < Api::ApplicationController
       request_id: request.request_id,
       remote_ip: request.remote_ip,
       device_id: params["unique_id"],
+      city_id: params["city_id"],
       endpoint: person ? 'historical_selfie_verification' : 'selfie_idnumber_verification',
       id_number: params["id"],
       name: params["name"],
