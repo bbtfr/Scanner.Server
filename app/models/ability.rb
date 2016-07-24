@@ -1,5 +1,9 @@
 class Ability < ApplicationRecord
   FEATURES = %w(scan_id_card liveness_test)
+  DEFAULT_USE_COUNTS = {
+    "scan_id_card" => 3,
+    "liveness_test" => 0
+  }
   CHECK_ABILITY = false
 
   serialize :use_counts, Hash
@@ -12,7 +16,7 @@ class Ability < ApplicationRecord
   end
 
   def use_count feature
-    use_counts[feature] || 0
+    use_counts[feature] || DEFAULT_USE_COUNTS[feature] || 0
   end
 
   def has_ability? feature
