@@ -18,7 +18,7 @@ class Api::IdentitiesController < Api::ApplicationController
 
     result = if person
         # 调用人脸比对接口
-        SensetimeAPI.historical_selfie_verification person.image.sensetime_image_id, params["image"]
+        SensetimeAPI.historical_selfie_verification person.image, params["image"]
       else
         # 调用公安身份证照片比对接口
         SensetimeAPI.selfie_idnumber_verification params["image"], params["id"], params["name"]

@@ -12,11 +12,11 @@ module SensetimeAPI
     send_request url, params
   end
 
-  def self.historical_selfie_verification image_id, file
+  def self.historical_selfie_verification image, file
     url = 'https://v1-auth-api.visioncloudapi.com/identity/historical_selfie_verification'
     params = {
       selfie_file: file,
-      historical_selfie_image_id: image_id
+      historical_selfie_file: Paperclip.io_adapters.for(image.file)
     }
 
     send_request url, params
