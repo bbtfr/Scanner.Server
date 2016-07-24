@@ -19,18 +19,6 @@ ActiveRecord::Schema.define(version: 20160724051410) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "callings", force: :cascade do |t|
-    t.string   "request_id"
-    t.string   "remote_ip"
-    t.string   "device_id"
-    t.string   "id_number"
-    t.string   "name"
-    t.integer  "image_id"
-    t.text     "sensetime_result"
-    t.datetime "created_at"
-    t.index ["image_id"], name: "index_callings_on_image_id"
-  end
-
   create_table "cities", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
