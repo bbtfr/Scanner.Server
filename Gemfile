@@ -43,6 +43,8 @@ gem 'dotenv-rails'
 # Simple HTTP and REST client for Ruby, inspired by microframework syntax for specifying actions.
 gem 'rest-client'
 
+gem 'browser_warrior'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
