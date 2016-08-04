@@ -1,5 +1,5 @@
 <% @category = params[:category] %>
-<% @news = @news.where(category: @category) if @category %>
+<% @resources = @resources.where(category: @category) if @category %>
 <% def nav_item title, key = nil
   content_tag :li, @category == key && { class: 'active' } do
     link_to(title,  news_index_path(key && { category: key}))
@@ -23,7 +23,7 @@ end %>
   </div>
 
   <div class="col-md-9 data-table">
-    <%= wice_index_for @news, class: "table table-striped table-hover" do |i| %>
+    <%= wice_index_for @resources, class: "table table-striped table-hover" do |i| %>
       <%= i.attribute :id %>
       <%= i.attribute :title, searchable: true %>
       <%= i.attribute :author, searchable: true %>

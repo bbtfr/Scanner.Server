@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= @news.title %></title>
+    <title><%= @resource.title %></title>
     <style type="text/css">
       .wechat-content h2 {
         margin-bottom: 5px;
@@ -21,14 +21,14 @@
   </head>
   <body>
     <div class="wechat-content">
-      <h2><%= @news.title %></h2>
+      <h2><%= @resource.title %></h2>
       <div class="message-meta-data">
-        <span><%= l @news.created_at, format: :long %></span>
-        <span><%= @news.author %></span>
+        <span><%= l @resource.created_at, format: :long %></span>
+        <span><%= @resource.author %></span>
       </div>
 
       <div class="message-content">
-        <%= raw @news.source_content %>
+        <%= raw @resource.source_content %>
       </div>
     </div>
   </body>

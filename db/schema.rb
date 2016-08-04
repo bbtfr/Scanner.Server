@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160724072612) do
+ActiveRecord::Schema.define(version: 20160804150516) do
 
   create_table "abilities", force: :cascade do |t|
     t.string   "unique_id"
     t.text     "use_counts"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "android_packages", force: :cascade do |t|
+    t.string   "version"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "cities", force: :cascade do |t|

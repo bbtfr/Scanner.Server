@@ -1,0 +1,5 @@
+<h2 class="page-header">
+  <%= human_resource_name %>管理 <small><%= link_to "新建#{human_resource_name}", url_for(action: :new) %></small>
+</h2>
+
+<%= render 'table', resources: @resources %>

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :news
+  resources :android_packages
   resource :audit, only: [] do
     get :identify
     get :people
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
       get :abilities
       post :use_count
     end
+    resource :update, only: :show
   end
 
   root to: 'news#index'
