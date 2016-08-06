@@ -13,8 +13,8 @@
   <div class="col-md-9 data-table">
     <% blank = '<span class="blank">未知</span>'.html_safe %>
     <%= wice_index_for @people, class: "table table-striped table-hover" do |i| %>
-      <%= i.attribute :name %>
-      <%= i.attribute :id_number, format: :watermark %>
+      <%= i.attribute :name, searchable: true %>
+      <%= i.attribute :id_number, format: :watermark, searchable: true %>
       <%= i.attribute :created_at, format: :short %>
       <%= i.attribute :updated_at, format: :short %>
       <%= i.attribute :identify_callings_count %>

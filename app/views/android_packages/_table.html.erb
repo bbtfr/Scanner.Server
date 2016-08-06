@@ -1,6 +1,6 @@
 <%= wice_index_for resources, class: "table table-striped table-hover" do |i| %>
   <%= i.attribute :id %>
-  <%= i.attribute :version, searchable: true %>
+  <%= i.attribute :version, searchable: true, searchable: true %>
   <%= i.attribute :file do |package| %>
     <%= link_to package.file.original_filename, package.file.url %>
   <% end %>

@@ -28,6 +28,7 @@ zh-CN:
         request_id: 请求ID
         remote_ip: 请求IP
         device_id: 请求设备ID
+        created_at: 请求时间
         id_number: 身份证号码
         name: 姓名
         endpoint: 请求接口
