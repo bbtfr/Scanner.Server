@@ -20,7 +20,7 @@ zh-CN:
       android_package:
         id: ID
         version: 版本号
-        file: 下载链接
+        file: 安装包
         created_at: 创建时间
         updated_at: 更新时间
       identify_calling:
