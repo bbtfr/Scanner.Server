@@ -1,0 +1,26 @@
+<style type="text/css">
+  table {
+    border-width: 0;
+    border-style: none;
+    border-color: #0000ff;
+    border-collapse: collapse;
+  }
+
+  td {
+    border-left: solid 5px #000;
+    padding: 0;
+    margin: 0;
+    width: 0px;
+    height: 5px;
+  }
+
+  td.black { border-color: #000; }
+  td.white { border-color: #fff; }
+</style>
+
+<h2 class="page-header">
+  安卓版本 #<%= @resource.id %> <small>v<%= @resource.version %></small>
+</h2>
+
+<% download_url = "#{request.protocol}#{request.host_with_port}#{@resource.file.url}" %>
+<%= raw RQRCode::QRCode.new(download_url).as_html %>

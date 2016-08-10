@@ -45,6 +45,9 @@ gem 'rest-client'
 
 gem 'browser_warrior'
 
+# A Ruby library that encodes QR Codes
+gem 'rqrcode'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

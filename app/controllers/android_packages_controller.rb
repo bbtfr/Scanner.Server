@@ -1,4 +1,5 @@
 class AndroidPackagesController < ResourceController
+  before_action :find_resource, only: [:qrcode]
 
   private
     def resource_class
