@@ -1,4 +1,7 @@
 zh-CN:
+  time:
+    formats:
+      date: "%Y年%b%d日"
   activerecord:
     models:
       news: 新闻
