@@ -8,6 +8,7 @@ zh-CN:
       android_package: 安卓版本
       identify_calling: 接口调用记录
       person: 人员记录
+      city: 区域
     attributes:
       news:
         id: ID
@@ -43,4 +44,6 @@ zh-CN:
         updated_at: 最近认证时间
         identify_callings_count: 认证次数
         accepted_identify_callings_count: 认证通过次数
-
+      city:
+        id: ID
+        name: 名称

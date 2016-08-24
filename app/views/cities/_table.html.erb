@@ -1,0 +1,5 @@
+<%= wice_index_for resources, class: "table table-striped table-hover" do |i| %>
+  <%= i.attribute :id %>
+  <%= i.attribute :name %>
+  <%= i.actions :edit, :destroy %>
+<% end %>
