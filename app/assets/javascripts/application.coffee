@@ -15,6 +15,7 @@
 #= require bootstrap/dropdown
 #= require bootstrap/alert
 #= require turbolinks
+#= require editormd.min
 #= require_tree .
 
 $(document).on 'ready turbolinks:load', ->

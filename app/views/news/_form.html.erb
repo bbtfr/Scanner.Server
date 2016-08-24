@@ -1,18 +1,47 @@
-<%= simple_form_for(resource, html: { class: 'form-horizontal col-md-7' }) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for(resource, html: { class: 'form-horizontal' }) do |f| %>
+  <div class="col-md-7">
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :author %>
-    <%= f.input :category, collection: News::CATEGORIES %>
-    <%= f.input :source_content, input_html: { rows: 4 } %>
-    <%= f.input :source_url %>
-    <%= f.input :thumbnail_image %>
-    <%= f.input :thumbnail_url %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :title %>
+      <%= f.input :author %>
+      <%= f.input :category, collection: News::CATEGORIES %>
+      <div class="form-group text optional news_source_content">
+        <%= f.label :source_content, class: 'col-sm-3 control-label' %>
+        <div class="col-sm-9">
+          <div class="editormd" id="editormd">
+            <%= f.input_field :raw_source_content, class: 'editormd-markdown-textarea hidden' %>
+            <%= f.input_field :source_content, class: 'editormd-html-textarea hidden' %>
+          </div>
+        </div>
+      </div>
+      <%= f.input :source_url %>
+      <%= f.input :thumbnail_image %>
+      <%= f.input :thumbnail_url %>
+    </div>
 
-  <div class="form-actions pull-right">
-    <%= f.button :submit %>
+    <div class="form-actions pull-right">
+      <%= f.button :submit %>
+    </div>
   </div>
 
 <% end %>
+
+<script type="text/javascript">
+  var $container = $("body > .container"),
+      $editormd = $("#editormd");
+
+  var width = $container.offset().left + $container.width() - $editormd.offset().left;
+
+  var editor = editormd("editormd", {
+      width: width,
+      height: 480,
+      path: "/editormd/lib/",
+      saveHTMLToTextarea: true
+  });
+
+  $(window).resize(function() {
+    var width = $container.offset().left + $container.width() - $editormd.offset().left;
+    $editormd.width(width);
+  });
+</script>

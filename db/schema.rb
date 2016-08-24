@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160804150516) do
+ActiveRecord::Schema.define(version: 20160824135805) do
 
   create_table "abilities", force: :cascade do |t|
     t.string   "unique_id"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20160804150516) do
     t.text     "source_content"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.text     "raw_source_content"
   end
 
   create_table "people", force: :cascade do |t|

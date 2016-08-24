@@ -10,6 +10,9 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require editormd.min
+ *= require editormd.logo.min
+ *= require editormd.preview.min
  *= require_tree .
  *= require_self
  */
@@ -17,3 +20,8 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.editormd-fullscreen {
+  z-index: 1000;
+  top: 50px;
+}

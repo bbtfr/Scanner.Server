@@ -2,34 +2,27 @@
 <html>
   <head>
     <title><%= @resource.title %></title>
+    <%= stylesheet_link_tag "preview" %>
     <style type="text/css">
-      .wechat-content h2 {
-        margin-bottom: 5px;
-      }
-      .wechat-content .message-meta-data {
-        color: grey;
-      }
-      .wechat-content .message-content {
-        margin-top: 10px;
-      }
-      img {
-        display: block;
-        width: 100%;
-      }
+      body { margin: 15px; }
+      .markdown-body .title { border-bottom: 0; margin-bottom: 0px; }
+      .markdown-body .meta-data { color: grey; }
+      .markdown-body h1 { font-size: 1.75em; }
+      .markdown-body h2 { font-size: 1.5em; }
+      .markdown-body h2 { font-size: 1.25em; }
+      .markdown-body h4, .markdown-body h5, .markdown-body h6 { font-size: 1em; }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body>
-    <div class="wechat-content">
-      <h2><%= @resource.title %></h2>
-      <div class="message-meta-data">
-        <span><%= l @resource.created_at, format: :long %></span>
-        <span><%= @resource.author %></span>
-      </div>
+  <body class="markdown-body">
+    <h1 class="title"><%= @resource.title %></h1>
+    <div class="meta-data">
+      <span><%= l @resource.created_at, format: :date %></span>
+      <span><%= @resource.author %></span>
+    </div>
 
-      <div class="message-content">
-        <%= raw @resource.source_content %>
-      </div>
+    <div class="content">
+      <%= raw @resource.source_content %>
     </div>
   </body>
 </html>
