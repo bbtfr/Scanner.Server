@@ -34,10 +34,11 @@
   var width = $container.offset().left + $container.width() - $editormd.offset().left;
 
   var editor = editormd("editormd", {
-      width: width,
-      height: 480,
-      path: "/editormd/lib/",
-      saveHTMLToTextarea: true
+    width: width,
+    height: 480,
+    path: "/editormd/lib/",
+    htmlDecode : true,
+    saveHTMLToTextarea: true
   });
 
   $(window).resize(function() {

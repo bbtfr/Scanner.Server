@@ -1,1 +1,10 @@
 //= require editormd.preview.min
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/type";
+
+.markdown-body {
+  p {
+    text-indent: 2em;
+  }
+}
