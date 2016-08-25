@@ -39,6 +39,7 @@
     path: "/editormd/lib/",
     htmlDecode: true,
     saveHTMLToTextarea: true,
+    previewCodeHighlight: false,
     imageUpload: true,
     imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
     imageUploadURL: "/editormd/images",
@@ -46,12 +47,25 @@
     toolbarIcons: [
         "undo", "redo", "|",
         "bold", "del", "italic", "quote", "|",
-        "h1", "h2", "h3", "h4", "hr", "|",
+        "h1", "h2", "h3", "|",
+        // "h4", "h5", "h6", "|",
         "list-ul", "list-ol", "|",
-        "link", "reference-link", "image", "table", "datetime", "html-entities", "|",
+        "link", "reference-link", "image", "table", "hr", "datetime", "html-entities", "|",
         "watch", "preview", "fullscreen", "|",
         "help", "info"
-    ]
+    ],
+    // toolbarIconsClass: {
+    //   h4: "fa-align-left",
+    //   h5: "fa-align-center",
+    //   h6: "fa-align-right"
+    // },
+    // lang: {
+    //   toolbar: {
+    //     h4: "左对齐",
+    //     h5: "居中",
+    //     h6: "右对齐"
+    //   }
+    // },
   });
 
   $(window).resize(function() {
@@ -59,3 +73,13 @@
     $editormd.width(width);
   });
 </script>
+
+<style type="text/css">
+  .fa-align-left, .fa-align-center, .fa-align-right {
+    font-size: 0;
+  }
+
+  .fa-align-left::before, .fa-align-center::before, .fa-align-right::before {
+    font-size: 14px;
+  }
+</style>

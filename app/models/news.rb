@@ -17,10 +17,10 @@ class News < ApplicationRecord
   end
 
   def source(request)
-    if source_url.present?
-      source_url
-    elsif source_content.present?
+    if source_content.present?
       "#{request.scheme}://#{request.host_with_port}/news/#{id}"
+    elsif source_url.present?
+      source_url
     end
   end
 end

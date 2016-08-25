@@ -1,10 +1,79 @@
-//= require editormd.preview.min
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
-@import "bootstrap/type";
+@import "bootstrap/scaffolding";
 
 .markdown-body {
+  $font-family-base: "Microsoft YaHei",Helvetica,"Meiryo UI","Malgun Gothic","Segoe UI","Trebuchet MS",Monaco,monospace,Tahoma,STXihei,"华文细黑",STHeiti,"Helvetica Neue","Droid Sans","wenquanyi micro hei",FreeSans,Arimo,Arial,SimSun,"宋体",Heiti,"黑体",sans-serif;
+  $font-size-base: 16px;
+  $text-color: #333;
+
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  margin: 1em;
+
+  $font-size-h1: 1.5em;
+  $font-size-h2: 1.25em;
+  $font-size-h3: 1em;
+
+  $font-size-h4: 1em;
+  $font-size-h5: 1em;
+  $font-size-h6: 1em;
+
+  $blockquote-font-size: 1em;
+
+  $headings-font-weight: 700;
+
+  @import "bootstrap/type";
+
+  .title {
+    font-size: 1.75em;
+    border-bottom: 0;
+    margin-bottom: .3em;
+  }
+
+  .meta-data {
+    color: $text-muted;
+    margin-bottom: 1em;
+  }
+
+  img {
+    width: 100%;
+    max-width: 720px;
+  }
+
+  p > img {
+    margin-left: -2em;
+  }
+
+  pre, code {
+    color: $text-muted;
+  }
+
+  blockquote {
+    border-left: 5px solid #ddd;
+    background: #f8f8f8;
+  }
+
+  // Customize
   p {
     text-indent: 2em;
+    margin-bottom: 1em;
+  }
+
+  h4, h5, h6 {
+    font-weight: inherit;
+    line-height: inherit;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  h5 {
+    text-align: center;
+  }
+
+  h6 {
+    text-align: right;
   }
 }
+
+body.markdown-body { overflow: auto; }

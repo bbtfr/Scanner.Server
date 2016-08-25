@@ -11,6 +11,6 @@ class Api::NewsController < Api::ApplicationController
       end
 
     @finished = news_klass.count <= @page * 10
-    @news = news_klass.page(@page).per(@per)
+    @news = news_klass.order(created_at: :desc).page(@page).per(@per)
   end
 end

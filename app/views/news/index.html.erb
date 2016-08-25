@@ -29,7 +29,13 @@ end %>
       <%= i.attribute :author, searchable: true %>
       <%= i.attribute :created_at, format: :short %>
       <%= i.attribute :updated_at, format: :short %>
-      <%= i.actions :edit, :destroy %>
+      <%= i.actions do |a| %>
+        <%= a.action_link :show do %>
+          <%= link_to "预览", i.object.source(request), class: "action_show action", target: "_blank" %>
+        <% end %>
+        <%= a.action_link :edit %>
+        <%= a.action_link :destroy %>
+      <% end %>
     <% end %>
 
   </div>
