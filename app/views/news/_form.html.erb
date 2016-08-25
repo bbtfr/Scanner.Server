@@ -37,8 +37,21 @@
     width: width,
     height: 480,
     path: "/editormd/lib/",
-    htmlDecode : true,
-    saveHTMLToTextarea: true
+    htmlDecode: true,
+    saveHTMLToTextarea: true,
+    imageUpload: true,
+    imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+    imageUploadURL: "/editormd/images",
+    placeholder: "您可以使用Markdown编辑新闻内容...",
+    toolbarIcons: [
+        "undo", "redo", "|",
+        "bold", "del", "italic", "quote", "|",
+        "h1", "h2", "h3", "h4", "hr", "|",
+        "list-ul", "list-ol", "|",
+        "link", "reference-link", "image", "table", "datetime", "html-entities", "|",
+        "watch", "preview", "fullscreen", "|",
+        "help", "info"
+    ]
   });
 
   $(window).resize(function() {

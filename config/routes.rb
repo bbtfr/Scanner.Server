@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     get :show, to: redirect('/audit/identify')
   end
 
+  namespace :editormd do
+    resources :images, only: :create
+  end
+
   namespace :api, defaults: { format: 'json' } do
     resources :news, only: :index
     resources :cities, only: :index
