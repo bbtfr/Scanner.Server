@@ -74,6 +74,64 @@
   h6 {
     text-align: right;
   }
+
+  table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: $line-height-computed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    overflow: auto;
+    word-break: normal;
+    word-break: keep-all;
+
+    // Cells
+    > thead,
+    > tbody {
+      > tr {
+        > th,
+        > td {
+          padding: $table-cell-padding;
+          line-height: $line-height-base;
+          vertical-align: top;
+        }
+      }
+    }
+
+    > thead > tr {
+      > th {
+        text-align: left;
+      }
+    }
+
+    > tbody > tr {
+      > th,
+      > td {
+        border-top: 1px solid $table-border-color;
+      }
+    }
+
+    // Bottom align for column headings
+    > thead > tr > th {
+      vertical-align: bottom;
+      border-bottom: 2px solid $table-border-color;
+    }
+
+    // Remove top border from thead by default
+    > tbody {
+      > tr:first-child {
+        > th,
+        > td {
+          border-top: 0;
+        }
+      }
+    }
+
+    > tbody > tr:nth-of-type(odd) {
+      background-color: $table-bg-accent;
+    }
+  }
 }
 
 body.markdown-body { overflow: auto; }
