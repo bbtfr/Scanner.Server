@@ -28,7 +28,7 @@ class Api::IdentitiesController < Api::ApplicationController
     @ability.decrease_use_count! "liveness_test"
 
     # 保存审计信息
-    image = Image.create!(
+    image = IdentifyImage.create!(
       file: params["image"],
       sensetime_image_id: result["selfie"]["image_id"]
     )

@@ -1,5 +1,5 @@
 class Person < ApplicationRecord
-  belongs_to :image
+  belongs_to :image, class_name: 'IdentifyImage'
   has_many :identify_callings, foreign_key: :id_number, primary_key: :id_number
 
   def identify_callings_count

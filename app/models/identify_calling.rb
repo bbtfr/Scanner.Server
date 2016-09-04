@@ -12,5 +12,5 @@ class IdentifyCalling < ApplicationRecord
   }
 
   serialize :sensetime_result, Hash
-  belongs_to :image
+  belongs_to :image, class_name: 'IdentifyImage'
 end

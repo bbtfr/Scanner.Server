@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824135805) do
+ActiveRecord::Schema.define(version: 20160904052903) do
 
   create_table "abilities", force: :cascade do |t|
     t.string   "unique_id"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20160824135805) do
     t.string   "sensetime_image_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.string   "type"
   end
 
   create_table "news", force: :cascade do |t|
