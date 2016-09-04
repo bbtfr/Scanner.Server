@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  resource :welcome, only: :show
+
   resources :news
   resources :cities
   resources :android_packages do
@@ -30,5 +32,5 @@ Rails.application.routes.draw do
     resource :update, only: :show
   end
 
-  root to: 'news#index'
+  root to: 'welcomes#show'
 end

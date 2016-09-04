@@ -1,0 +1,384 @@
+ /* Responsive styles
+================================================== */
+
+
+ /* Large Devices, Wide Screens */
+ 
+ @media (min-width: 1200px) {
+     
+   .dropdown i {
+     display: none;
+   }
+   
+ }
+ 
+ 
+ 
+ /* Medium Devices, Desktops */
+ 
+ @media (min-width: 992px) {
+     
+   .flexslider .slides img,
+   .qt-flex-slider .flexSlideshow {
+     height: 750px;
+   }
+   
+   .dropdown i {
+     display: none;
+   }
+   
+   /* Navigation */
+   .navbar-nav>li>a {
+     padding: 21px 24px;
+   }
+   
+ }
+ 
+ 
+ 
+ /* Small Devices, Tablets */
+ 
+ @media (min-width: 768px) and (max-width: 991px) {
+
+   /* Logo */
+   
+   .navbar-brand {
+     width: auto;
+   }
+   
+   /* Navigation */
+   
+   ul.navbar-nav > li > a {
+     padding: 21px 5px;
+   }
+   
+   .carousel-800 {
+    height: 600px;
+    }
+
+    .carousel-800 .item {
+        height: 600px;
+    }
+   
+   /* Portfolio */
+   
+   figure.effect-oscar figcaption {
+     padding: 1.5em;
+   }
+   
+   figure.effect-oscar figcaption::before {
+     top: 15px;
+     right: 15px;
+     bottom: 15px;
+     left: 15px;
+   }
+   
+   figure.effect-oscar h3 {
+     margin-top: 0;
+     font-size: 16px;
+   }
+   
+   /* Featured tab */
+   
+   .featured-tab .tab-pane img {
+     width: 45%;
+   }
+   
+   .featured-tab .tab-pane i.big {
+     font-size: 150px;
+   }
+   
+   .featured-tab .tab-pane,
+   .landing-tab .tab-pane {
+     text-align: left;
+   }
+   
+   
+   /* Pricing */
+   
+   .plan {
+     margin-bottom: 60px;
+   }
+   
+   /* Testimonial */
+   
+   .testimonial-content {
+     padding: 0 30px;
+   }
+   
+   
+   /*-- Landing ---*/
+   
+   .hero-text {
+     width: 95%;
+   }
+   
+   .hero-title {
+     font-size: 36px;
+   }
+   
+   .hero-buttons a.btn {
+     padding: 10px 20px;
+   }
+   
+   .app-gallery figure.effect-oscar a {
+         top: 20%;
+         transform: translateY(-30%);
+   }
+   
+   
+ }
+ 
+ 
+ 
+ /* Small Devices Potrait */
+ 
+ @media (max-width: 767px) {
+     
+   /* Common */
+   
+   .heading {
+     text-align: center;
+   }
+   
+   .heading .title-icon {
+     float: none !important;
+     margin: 0 0 20px;
+     display: inline-block;
+   }
+   
+   h2.title {
+     font-size: 28px;
+     border-left: 0;
+   }
+   
+   .title-desc {
+     line-height: normal;
+     padding: 6px 0px 0;
+   }
+   
+   .btn.btn-primary {
+     padding: 8px 22px;
+   }
+   
+   h2 {
+     font-size: 28px;
+   }
+   
+   /* Logo */
+   
+   .navbar-brand {
+     width: auto;
+   }
+   
+   /* Navigation */
+   
+   ul.navbar-nav > li > a {
+     padding: 21px 10px;
+   }
+   
+   .navbar-collapse {
+     background: #333333;
+   }
+   
+   .navbar-collapse ul.navbar-nav > li > a {
+     color: #fff;
+   }
+   
+   .navbar-collapse ul.navbar-nav > li.active > a,
+   .navbar-collapse ul.navbar-nav > li:hover > a {
+     color: #49a2e7;
+   }
+   
+   .carousel-800 {
+    height: 400px;
+    }
+
+    .carousel-800 .item {
+        height: 400px;
+    }
+   
+   
+   /* Portfolio */
+   .isotope-nav ul li a {
+     padding: 5px;
+     margin-bottom: 10px;
+     display: inline-block;
+   }
+   
+   figure.effect-oscar h3 {
+     margin-top: 25%;
+   }
+   
+   #isotope .isotope-item .grid {
+     padding-left: 10px;
+     padding-right: 10px;
+   }
+   
+   /* Featured tab */
+   
+   .featured-tab {
+     padding: 0 30px;
+   }
+   
+   .featured-tab .tab-pane i.big {
+     font-size: 150px;
+   }
+   
+   .featured-tab .tab-pane,
+   .landing-tab .tab-pane {
+     text-align: left;
+     padding-left: 0;
+     padding-top: 30px;
+   }
+   
+   /* Facts */
+   
+   .facts {
+     padding-bottom: 20px;
+   }
+   
+   .facts-num span {
+     font-size: 48px;
+     margin-top: 20px;
+   }
+   
+   .facts i {
+     font-size: 32px;
+   }
+   
+ 
+   /* Pricing */
+   
+   .plan {
+     margin-bottom: 60px;
+   }
+   
+   /* Testimonial */
+   
+   .testimonial-content {
+     padding: 0 30px;
+   }
+   
+   
+   
+   /*-- Landing ---*/
+   
+   .hero-section {
+     padding-top: 90px;
+   }
+   
+   .hero-text {
+     width: 100%;
+     padding-right: 0;
+   }
+   
+   .hero-title {
+     font-size: 36px;
+   }
+   
+   .hero-buttons a.btn {
+     padding: 10px 20px;
+   }
+   
+   .app-gallery figure.effect-oscar a {
+         top: 20%;
+         transform: translateY(-30%);
+   }
+   
+   .hero-images img {
+     display: none;
+   }
+   
+   .landing_facts .facts-num span {
+     font-size: 48px;
+     margin-top: 20px;
+   }
+   
+   .landing_facts .facts i {
+     font-size: 30px;
+   }
+   
+   .qt-jumbo {
+    padding-top:90px;
+    padding-bottom:50px;
+    }
+    .qt-jumbo h1 {
+        font-size:40px;
+    }
+    .qt-jumbo p {
+        font-size:13px;
+    }
+   
+    .qt-featurette-full {
+    min-height: 200px;
+    }
+    
+    .qt-featurette-full .qt-featurette-full-inner {
+        min-height: 200px;
+        max-height: 800px;
+        padding: 100px 30px;
+    }
+    
+    .mw-80pc{
+      max-width: 100%;
+        margin-right: auto;
+        margin-left: auto;  
+    }
+   
+ }
+ 
+ 
+ 
+ /* Extra Small Devices, Phones */
+ 
+ @media (max-width: 479px) {
+    .heading-lg {
+    font-size: 30px;
+    line-height: 30px;
+    }  
+    
+     
+   /* Logo */
+   
+   .navbar-brand {
+     width: 145px !important;
+     background-size: contain !important;
+     height: 50px;
+     line-height: 50px;
+     padding: 2px 5px 0;
+     width: auto !important;
+    font-size: 1.6em;
+    padding-left: 10px;
+    padding-right: 20px;
+   }
+   
+   /* Slideshow */
+   
+   #main-slide .slides img {
+     height: 230px;
+   }
+   
+   #main-slide .item img {
+     height: 250px;
+   }
+   
+   .carousel-800 {
+        height: 400px;
+    }
+    
+    .carousel-800 .item {
+        height: 400px;
+    }
+   
+ }
+ 
+ 
+ 
+ 
+ /* =additional queries (fill as desired)*/
+ /* ================= */
+ 
+ @media (min-width: 768px) {}
+ 
+ @media (min-width: 1200px) {}  

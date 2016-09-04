@@ -1,0 +1,1031 @@
+/*
+Template Name: Marketing Pro Customizable Bootstrap Theme
+Author: Didtoo
+	
+
+Table of Contents
+==================================================
+
+
+1 ====HOME
+1a =Main Slider
+
+
+2 ====ABOUT
+2a =Landing tabs
+2b =Counter
+2c =Testimonial columns
+2d =Subscribe
+
+3 ====SERVICES
+3c =Our Services
+3c =Client Testimonial carousel
+
+
+4 ====PORTFOLIO
+4a =Our work
+4b =Portfolio Hover Effect
+4c =Portfolio Modal Settings 
+4d =Portfolio Slider
+
+
+5 ====PRICING
+5a =Pricing table
+
+6 ====Gallery
+6a =Gallery
+
+
+7 ====CONTACT
+7a =Map and Contact Form
+7b =Footer
+
+*/
+
+/* ================================================= */
+/*   1a =Main Slider */
+/* ================================================== */
+
+
+ /* 2f ==Carousel  ========
+================================================== */
+
+.qt-carousel{
+     padding-top: 100px;
+    padding-bottom: 100px;
+    
+}
+
+.carousel-800 {
+    height: 800px;
+}
+
+.carousel-800 .item {
+    height: 800px;
+}
+
+@media (max-width: 768px){
+ .carousel-800 {
+    height: 500px;
+}
+
+.carousel-800 .item {
+    height: 500px;
+}
+}
+}
+
+.carousel-indicators-round li {
+    margin: 0px;
+    width: 12px;
+    height: 12px;
+    margin-right: 0px !important;
+    display: inline-block;
+}
+
+
+.carousel .carousel-indicators li {
+    background-color: #334F96;
+}
+.carousel .carousel-indicators .active {
+    background-color: #c6c6c6;
+}
+
+.item-bg-none {
+    background: none;
+    background-color: rgba(0, 0, 0, .01) !important;
+}
+
+.carousel-caption {
+    z-index: 10;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .0);
+}
+
+
+
+/* ================================================= */
+/*   =2a =About us - tabs   */
+/* ================================================== */
+
+.qt-about{
+    padding:80px 0;
+}
+
+.landing-tab {
+  padding: 30px 0;
+}
+
+.landing-tab .nav-tabs {
+  border-right: 1px solid #e7e7e7;
+  padding: 25px 0;
+  border-bottom: 0;
+}
+
+.landing-tab .nav-tabs>li.active {
+  margin-right: -3px;
+  border-right: 5px solid #334F95;
+}
+.landing-tab .nav-tabs>li.active a i{
+  color: #334F95;
+}
+
+
+
+.landing-tab .nav-tabs>li.active .tab-info h3 {
+  color: #323232;
+}
+
+.landing-tab .nav-tabs>li {
+  padding: 15px 0;
+}
+
+.landing-tab .nav-tabs>li>a {
+  background: none !important;
+  border-radius: 0;
+  padding: 0 15px 0;
+  color: #6A6A6A !important;
+  position: relative;
+  border: 0 !important;
+  -moz-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.landing-tab .nav-tabs>li>a:hover {
+  background: none;
+      color: #334F95 !important;
+}
+
+.landing-tab .tab-icon {
+  font-size: 28px;
+  display: inline-block;
+}
+
+.landing-tab .tab-info {
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  left: 70px;
+  top: 50%;
+  margin-top: -12px;
+}
+
+.landing-tab .tab-info h3 {
+  font-size: 18px;
+  line-height: normal;
+  margin: 0;
+  color: #6A6A6A
+}
+
+.landing-tab .tab-pane h3 {
+  margin-top: 0;
+  line-height: normal;
+  font-weight: 400;
+  font-size: 26px;
+}
+
+.landing-tab .tab-pane h3.text-center {
+  margin-bottom: 25px;
+}
+
+.landing-tab .tab-pane {
+  padding-left: 105px;
+  padding-top:40px;
+  text-align: justify;
+}
+
+
+/* ================================================= */
+/*   2b =Counter   */
+/* ================================================== */
+
+.qt-counter-container{
+ padding:80px 0; 
+ position:relative;
+}
+   
+.counter {
+  color: #fff;
+}
+
+.facts i {
+  font-size: 48px;
+  color: #fff;
+}
+
+.facts-num span {
+  font-size: 62px;
+  font-weight: 700;
+  margin-top: 50px;
+  display: inline-block;
+  color: #fff;
+}
+
+.facts h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 10px;
+  color: #fff;
+}
+
+/* ================================================= */
+/*   2c =Testimonial (Client Testimonials)   */
+/* ================================================== */
+
+.qt-testimonial {
+  background: #e9edeb;
+  padding:120px 0;
+}
+
+.testimonial-col-content {
+  margin-top: 30px;
+}
+
+.testimonial-info {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.testimonial-text-item {
+  padding: 30px 40px;
+  border: 1px solid #d2d2d2;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: none;
+  position: relative;
+}
+
+.testimonial-text-item:before {
+  content: "";
+  position: absolute;
+  bottom: -17px;
+  left: 49px;
+  border-width: 16px 0 0 16px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.15) transparent;
+  display: block;
+  width: 0;
+}
+
+.testimonial-text-item:after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  left: 50px;
+  border-width: 16px 0 0 16px;
+  border-style: solid;
+  border-color: #fff transparent;
+  display: block;
+  width: 0;
+}
+
+.testimonial-text {
+  position: relative;
+}
+
+.testimonial-text:before {
+  content: '\f10d';
+  font-family: FontAwesome;
+  padding-right: 10px;
+  color: #334F95;
+}
+
+.testimonial-thumb {
+  margin: 15px auto;
+  float: none;
+  border: 0px solid rgba(0, 0, 0, 0.2);
+  max-width: 25%;
+  border-radius: 100%;
+}
+
+.testimonial-thumb img {
+  border: 0px solid #8E8E8E;
+  padding: 3px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+}
+
+.testimonial-author {
+  font-size: 14px;
+  margin-top: 0.5em;
+  font-weight: bold;
+  display: block;
+}
+
+.testimonial-author-desg {
+  font-style: italic;
+  display: block;
+}
+
+/* ================================================= */
+ /*   2d =Subscribe   */
+ /* ================================================== */
+ 
+ .qt-newsletter{
+     padding:80px 0;
+     position:relative;
+ }
+ 
+ 
+ .newsletter-form button {
+   position: absolute;
+   position: absolute;
+   right: 0;
+   top: 0;
+   border-radius: 0 !important;
+   border: 2px solid #81c83c;
+   color: #fff !important;
+   padding: 14px 30px 12px !important;
+ }
+  .newsletter-form button:hover {
+   color:#334F95 !important;
+ }
+ 
+ .qt-newsletter,
+ .qt-newsletter h2 {
+   color: white;
+ }
+ 
+ .newsletter-form .form-control {
+   background: white;
+ }
+
+
+
+/* ================================================= */
+/*   3a =Our Services - 4 Cols   */
+/* ================================================== */
+.qt-service{
+  padding:150px 0;    
+}
+.qt-service h2 {
+  color: #323232;
+}
+
+.service-heading {
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.service-content {
+  position: relative;
+  padding: 50px 10px 0 10px;
+}
+
+
+
+/* ================================================= */
+/*   3b =Client Carousel */
+/* ================================================== */
+
+.qt-clients {
+  color: #fff;
+  padding: 80px 0;
+   background-color: #334F95;
+}
+
+.client-carousel .item a {
+  margin-right: 20px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  display: inline-block;
+  padding: 10px;
+  -webkit-transition: all 350ms;
+  -ms-transition: all 350ms;
+  transition: all 350ms;
+}
+
+.client-carousel .item a:hover {
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+
+
+
+
+
+
+
+
+/* ================================================= */
+/*   3c =testimonial-heading-carousel */
+/* ================================================== */
+.qt-testimonial-heading-carousel{
+  position:relative;
+  padding:80px 0;
+}
+
+
+.testimonial-slide .testimonial-content h3.name {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.testimonial-slide .testimonial-content h3 span {
+  display: block;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 400;
+  margin-top: -10px;
+}
+
+.testimonial-slide .owl-buttons {
+  display: none;
+}
+
+.testimonial-slide .testimonial-text {
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 800px;
+  padding-top: 30px;
+  display: inline-block;
+  position: relative;
+  color: #fff;
+}
+
+.testimonial-slide .testimonial-text:before {
+  content: '\f10d';
+  font-family: FontAwesome;
+  padding-right: 10px;
+  color: #334F95;
+}
+
+.testimonial-slide .testimonial-text:after {
+  content: '\f10e';
+  font-family: FontAwesome;
+  padding-left: 10px;
+  color: #334F95;
+}
+
+.testimonial-slide.owl-theme .owl-controls .owl-page span {
+  background: none;
+  border: 1px solid #fff;
+  opacity: .7;
+}
+
+.testimonial-slide.owl-theme .owl-controls .owl-page.active span {
+  border: 1px solid transparent;
+  background: #334F95;
+  
+}
+
+.testimonial-author {
+  font-size: 14px;
+  margin-top: 0.5em;
+  font-weight: bold;
+  display: block;
+}
+
+.testimonial-author-desg {
+  font-style: italic;
+  display: block;
+}
+
+
+
+/* ================================================= */
+/*   4a =Portfolio - isotope (Our Work)   */
+/* ================================================== */
+
+.qt-portfolio {
+  background: #f5f5f5;
+  padding:80px 0;
+}
+
+
+/*-- Isotope Portfolio start --*/
+
+#isotope .isotope-item {
+  margin-top: 25px;
+  padding: 0 10px 0 10px;
+  margin-bottom: -5px;
+}
+
+.isotope-nav {
+  margin: 20px auto 20px;
+  display: inline-block;
+}
+
+.isotope-nav ul {
+  list-style: none;
+  margin: 0;
+}
+
+.isotope-nav ul li {
+  float: left;
+  margin-right: 10px;
+}
+
+.isotope-nav ul li a {
+  color: #323232;
+  border: 0px solid #334F95;
+  border-radius: 3px;
+  padding: 10px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.isotope-nav ul a.active,
+.isotope-nav ul a:hover {
+  color: #fff;
+  background: #334F95;
+}
+
+.grid figure {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  overflow: hidden;
+  background: #3085a3;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.grid figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.grid figure figcaption {
+  padding: 2em;
+  color: #fff;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
+/* Portfolio details */
+
+.portfolio-desc h3 {
+  margin-top: 0;
+}
+
+.portfolio-desc .project-btn {
+  margin-top: 20px;
+  padding: 8px 25px;
+}
+
+
+/* ================================================= */
+/*   4b =Portfolio Hover Effect */
+/* ================================================== */
+
+/* Oscar Hover Effect */
+ 
+ figure.effect-oscar {
+   background: #000;
+   background: rgba(0, 0, 0, .8);
+ }
+ 
+ figure.effect-oscar img {
+   display: block;
+   width: 100%;
+   opacity: 1;
+   -webkit-transition: opacity 0.35s;
+   transition: opacity 0.35s;
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+ }
+ 
+ figure.effect-oscar figcaption {
+   padding: 2.5em;
+   background-color: rgba(0, 0, 0, 0.1);
+   -webkit-transition: background-color 0.35s;
+   transition: background-color 0.35s;
+ }
+ 
+ figure.effect-oscar figcaption::before {
+   position: absolute;
+   top: 30px;
+   right: 30px;
+   bottom: 30px;
+   left: 30px;
+   border: 1px solid #fff;
+   content: '';
+ }
+ 
+ figure.effect-oscar h3 {
+   font-size: 20px;
+   color: #fff;
+   opacity: 0;
+   margin: 15% 0 10px 0;
+   font-family: 'Gentium Basic', serif;
+   font-style: italic;
+   font-weight: 700;
+   -webkit-transition: -webkit-transform 0.35s;
+   transition: transform 0.35s;
+   -webkit-transform: translate3d(0, 100%, 0);
+   transform: translate3d(0, 100%, 0);
+ }
+ 
+ figure.effect-oscar a {
+   color: #fff;
+   font-size: 18px;
+   margin: 20px 5px 0;
+   display: inline-block;
+   z-index: 1;
+   position: relative;
+   -webkit-transition: all 0.35s;
+   -moz-transition: all 0.35s;
+   -o-transition: all 0.35s;
+   transition: all 0.35s;
+ }
+ 
+ figure.effect-oscar a.link i {
+   -webkit-transform: rotate(90deg);
+   transform: rotate(90deg);
+ }
+ 
+ figure.effect-oscar figcaption::before,
+ figure.effect-oscar a {
+   opacity: 0;
+   -webkit-transition: all 0.35s, -webkit-transform 0.35s;
+   transition: all 0.35s, transform 0.35s;
+   -webkit-transform: scale(0);
+   transform: scale(0);
+ }
+ 
+ figure.effect-oscar:hover h3 {
+   -webkit-transform: translate3d(0, 0, 0);
+   transform: translate3d(0, 0, 0);
+ }
+ 
+ figure.effect-oscar:hover figcaption::before,
+ figure.effect-oscar:hover h3,
+ figure.effect-oscar:hover a {
+   opacity: 1;
+   -webkit-transform: scale(1);
+   transform: scale(1);
+ }
+ 
+ figure.effect-oscar:hover figcaption {
+   background-color: rgba(0, 0, 0, 0.5);
+ }
+ 
+ figure.effect-oscar:hover img {
+   opacity: 0.4;
+ }
+
+/* ================================================= */
+/*   4c =Portfolio Modal Settings */
+/* ================================================== */
+#portfolio-item{
+    padding:80px 0;
+}
+
+/* Banner area */
+
+#banner-area {
+  position: relative;
+}
+
+.banner-title-content {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-title-content h2 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.banner-title-content .breadcrumb {
+  background: none;
+  color: #fff;
+  font-family: 'Gentium Basic', serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 16px;
+}
+
+
+/* ================================================= */
+/*   4d =Portfolio Slider */
+/* ================================================== */
+
+
+/*-- Flex slider --*/
+
+.portfolio-slider .flexslider{
+  border: 0;
+  box-shadow: none;
+}
+
+.portfolio-slider .flex-direction-nav a {
+  opacity: 0;
+  background: #000;
+  color: #fff !important;
+  text-align: center;
+  text-shadow: none;
+  line-height: 40px;
+}
+
+.portfolio-slider {
+  font-size: 32px;
+}
+
+.portfolio-slider .flex-direction-nav a:hover {
+  color: #fff;
+  opacity: 1;
+}
+
+.portfolio-slider .flex-direction-nav a:hover {
+  background: #334F95;
+}
+
+.flexportfolio.flexslider .slides img {
+  height: auto;
+}
+
+.portfolio-slider .flex-direction-nav a{
+    opacity: 0;
+    background: #000;
+    color: #fff !important;
+    text-align: center;
+    text-shadow: none;
+    line-height: 40px;
+}
+
+
+
+
+
+
+
+
+
+/* ================================================= */
+/*   5a =Pricing Plan Tables */
+/* ================================================== */
+
+.qt-pricing {
+  padding: 180px 0;
+}
+.pricing-heading {
+    padding-bottom: 50px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    file_content_location: "Global and Text Styles";
+}
+.plan {
+  border: 1px solid #dedede;
+}
+
+.plan-name {
+  display: block;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  padding: 20px 0;
+  text-transform: uppercase;
+  color: #959595;
+}
+
+.plan-price {
+  font-size: 48px;
+  padding: 30px 0;
+  margin-bottom: 30px;
+  position: relative;
+  background: #f2f2f2;
+}
+
+.plan-price:after {
+  bottom: -30px;
+  border: solid transparent;
+  content: " ";
+  position: absolute;
+  border-width: 15px;
+  border-top-color: #f2f2f2;
+  left: 50%;
+  margin-left: -16px;
+}
+
+.plan.featured .plan-name {
+  color: #323232;
+}
+
+
+.plan.featured .plan-price {
+  color: #fff;
+  background: #334F95;
+}
+
+
+.plan.featured .plan-price:after {}
+
+.plan-price .currency {
+  top: -0.9em;
+  font-size: 50%;
+  left: -0.01em;
+  font-weight: 700;
+}
+
+.plan-name small {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.plan-price strong {
+  font-family: 'Gentium Basic', serif;
+}
+
+.plan-price sub {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.plan ul {
+  background: #fff;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.plan ul li {
+  border-top: 1px dashed #dedede;
+  padding: 12px 29px;
+  font-weight: 500;
+}
+
+.plan ul li:first-child {
+  border-top: 0 !important;
+}
+
+.plan a.btn {
+  color: #323232;
+  background: #fff;
+  margin-top: 25px;
+  margin-bottom: -20px;
+  padding: 8px 30px;
+}
+
+
+
+
+
+
+/* ================================================= */
+/*   6a =Gallery */
+/* ================================================== */
+.qt-gallery{
+    padding:80px 0;
+}
+.app-gallery .grid {
+  display: block;
+  margin: 0 15px 20px;
+  padding: 5px;
+}
+
+.app-gallery figure.effect-oscar a {
+  /*margin: 125px 5px 0;*/
+  top: 20%;
+  transform: translateY(-30%);
+}
+
+.app-gallery figure.effect-oscar figcaption::before {
+  border: 0;
+}
+
+.app-gallery.owl-theme .owl-controls .owl-page.active span {
+    background: #334F95;
+}
+
+
+
+/* ================================================= */
+/*   7a =Contact */
+/* ================================================== */
+.qt-contact-container{
+    padding:120px 0;
+}
+
+#contact-form {
+  margin-top: 25px;
+}
+
+#contact-form label {
+  font-weight: normal;
+}
+
+.map-wrapper {
+  position: relative;
+}
+
+.map {
+  height: 400px;
+  z-index: 1;
+}
+
+.contact-info-inner h3 {
+  font-weight: 700;
+  margin-bottom: 25px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.contact-info h3 {
+  margin-top: 42px;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.contact-info p {
+  font-size: 18px;
+}
+
+.contact-info i {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+
+/* Contact inside Map */
+
+.contact-info-inner {
+  position: absolute;
+  color: #fff;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, .7);
+  padding: 25px 30px;
+  max-width: 400px;
+  max-height: 400px;
+  text-align: left;
+}
+
+.contact-info-inner p {
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.contact-info-inner p strong {
+  display: block;
+}
+
+.contact-info-inner i {
+  margin-right: 20px !important;
+  font-size: 24px;
+  margin-top: 5px;
+}
+
+
+/* ================================================= */
+/*   7b =Footer */
+/* ================================================== */
+
+.footer {
+  padding: 40px 0;
+}
+
+.copyright-info {
+  color: #fff;
+  font-size: 16px;
+  border-top: 1px solid #515151;
+  max-width: 750px;
+  margin: 15px auto 0;
+  padding-top: 15px;
+}
+
+.copyright-info a {
+  color: #fff;
+}
+
+
+/* Footer 2 */
+
+.footer .scl {
+  padding-bottom: 15px;
+}
+
+.footer .copyright-info {
+  color: #323232;
+  border-top: 1px solid #e7e7e7;
+}
+
+
+
+
+
+
+
+
+  
