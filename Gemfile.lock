@@ -94,6 +94,8 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
+    font-awesome-sass (4.6.2)
+      sass (>= 3.2)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     http-cookie (1.0.2)
@@ -270,6 +272,7 @@ DEPENDENCIES
   capistrano3-puma
   coffee-rails (~> 4.2)
   dotenv-rails
+  font-awesome-sass
   index_for (~> 0.3)
   jbuilder (~> 2.5)
   jquery-rails
